@@ -4,7 +4,9 @@
 
 <template>
   <main>
-    <h1>Home</h1>
+    <h1 class="text-3xl font-bold text-red-600">
+      Hello world!
+    </h1>
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/blog">Blog</NuxtLink>
   </main>
