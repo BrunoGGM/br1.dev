@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.navbar {
+  @apply fixed border-t border-slate-500 bottom-0 left-0 right-0 z-50 min-h-[56px] h-[56px];
+}
+
+.acrylic {
+  @apply backdrop-blur-lg backdrop-saturate-200 bg-slate-900/60;
+}

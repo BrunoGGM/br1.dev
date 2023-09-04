@@ -1,0 +1,6 @@
+main{
+  background: url('@/assets/img/bg.webp') no-repeat center center fixed;
+  background-size: cover;
+  padding-bottom: 64px;
+  min-height: 100vh;
+}
