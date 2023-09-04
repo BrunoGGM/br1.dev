@@ -1,10 +1,12 @@
 <template>
-  <main class="grid gap-3 grid-cols-[repeat(auto-fit,64px)] auto-rows-[64px] h-screen w-screen pt-4 px-4">
-    <div v-for="icon in layout" class="flex flex-col items-center justify-center rounded" :class="{
+  <main class="flex flex-col h-screen w-screen pt-4 px-4 gap-3">
+    <div v-for="icon in icons" class="flex flex-col items-center rounded w-[64px] h-[64px]" :class="{
       'active:bg-white active:bg-opacity-10 hover:bg-white hover:bg-opacity-10 transition-all duration-300 ease-in-out': icon.number !== null,
     }">
-      <NuxtLink v-if="icon.number !== null" class="flex flex-col p-4" :to="icon.link">
-        <font-awesome-icon :icon="icon.icon" class="text-white text-2xl drop-shadow-lg"></font-awesome-icon>
+      <NuxtLink v-if="icon.number !== null" class="flex flex-col p-4 shrink-0" :to="icon.link">
+        <span>
+          <font-awesome-icon :icon="icon.icon" class="text-white text-2xl drop-shadow-lg"></font-awesome-icon>
+        </span>
         <span class="text-white text-xs drop-shadow-lg">{{ icon.label }}</span>
       </NuxtLink>
     </div>
@@ -12,34 +14,25 @@
 </template>
 
 <script setup>
-const layout = ref(Array(256));
 const icons = ref([{
+  icon: 'fa-relugar fa-folder',
+  link: '/blog',
+  label: 'Blog',
+  number: Math.floor(Math.random() * 200),
+},
+{
+  icon: 'fa-relugar fa-folder',
+  link: '/blog',
+  label: 'Blog',
+  number: Math.floor(Math.random() * 200),
+},
+{
   icon: 'fa-relugar fa-folder',
   link: '/blog',
   label: 'Blog',
   number: Math.floor(Math.random() * 200),
 }
 ]);
-
-layout.value.fill({
-  icon: '',
-  link: '',
-  label: '',
-  number: null,
-});
-
-
-onMounted(() => {
-  layout.value.map((icon, index) => {
-    let iconsIndex = icons.value.map((icon) => icon.number).flat();
-    if (iconsIndex.includes(index)) {
-      let iconIndex = iconsIndex.indexOf(index);
-      layout.value[index] = icons.value[iconIndex];
-    }
-  });
-});
-
-
 </script>
 
 <style scoped></style>
