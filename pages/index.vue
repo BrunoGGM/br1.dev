@@ -1,11 +1,11 @@
 <template>
   <main class="grid gap-3 grid-cols-[repeat(auto-fit,64px)] auto-rows-[64px] h-screen w-screen pt-4 px-4">
     <div v-for="icon in layout" class="flex flex-col items-center justify-center rounded" :class="{
-      'active:border active:border-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ease-in-out': icon.number !== null,
+      'active:bg-white active:bg-opacity-10 hover:bg-white hover:bg-opacity-10 transition-all duration-300 ease-in-out': icon.number !== null,
     }">
-      <NuxtLink v-if="icon.number !== null" class="flex flex-col shadow-xl" :to="icon.link">
-        <font-awesome-icon :icon="icon.icon" class="text-white text-2xl"></font-awesome-icon>
-        <span class="text-white text-xs">{{ icon.label }}</span>
+      <NuxtLink v-if="icon.number !== null" class="flex flex-col p-4" :to="icon.link">
+        <font-awesome-icon :icon="icon.icon" class="text-white text-2xl drop-shadow-lg"></font-awesome-icon>
+        <span class="text-white text-xs drop-shadow-lg">{{ icon.label }}</span>
       </NuxtLink>
     </div>
   </main>

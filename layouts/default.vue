@@ -78,7 +78,7 @@ onUnmounted(() => {
         </li>
         <li class="btn btn-ghost">
           <span class="text-center focus:outline-none flex flex-col gap-1">
-            <span>{{ time }}</span>
+            <span class="lowercase">{{ time }}</span>
             <span>{{ date }}</span>
           </span>
         </li>

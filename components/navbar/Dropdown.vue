@@ -146,7 +146,7 @@ export default {
   position: absolute;
   z-index: 1;
   min-width: 10rem;
-  padding: 1rem;
+  padding: .5rem;
   margin: 0.125rem 0 0;
   font-size: 1rem;
   text-align: left;
